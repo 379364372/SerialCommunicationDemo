@@ -155,12 +155,28 @@ static int gpio_edge(int pin, int edge)
 	close(fd);
 	return 0;
 }
+/**
+ * @name            @example
+ * pthread_t         线程id
+ * pthread_mutex_t   线程锁
+ * a                 循环标志
+ * gpio_fd_0         gpio89
+ * gpio_fd_1         gpio89
+ * ret               判断异常标志
+ * pollfd
+ * buff[]
+ */
 static pthread_t tid;
 static pthread_mutex_t dev_lock;
 static int a = 0;
 int gpio_fd_0,gpio_fd_1,ret;
 struct pollfd fds[3];
 char buff[10];
+/**
+ * @name  监测光藕限位
+ * @param arg
+ * @return  1 down end ; 0 up end;
+ */
 void *flex_pipeLine_process (void *arg)
 {
     while(a)
