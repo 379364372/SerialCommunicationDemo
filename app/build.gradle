@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "26.0.2"
+
+
+
+    defaultConfig {
+        applicationId "com.aviconics.devicelib"
+        minSdkVersion 8
+        targetSdkVersion 21
+
+        ndk {
+            moduleName "bodyControlCom"
+        }
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'demo'
+            keyPassword '123456'
+            storeFile file('../Signature/demo.jks')
+            storePassword '123456'
+        }
+    }
+
+
+
+    buildTypes {
+        debug{}
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.release
+            jniDebuggable = true
+            debuggable true
+        }
+    }
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.android.support:support-v4:21.0.3'
+}

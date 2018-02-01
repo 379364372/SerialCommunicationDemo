@@ -1,0 +1,140 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}">
+
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" />
+
+    <Button
+        android:id="@+id/left_rotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:text="左臂旋转1" />
+
+    <Button
+        android:id="@+id/left_rotate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:text="左臂旋转180"
+        android:layout_below="@+id/left_rotate"
+        android:layout_alignLeft="@+id/right_rotate2"
+        android:layout_alignStart="@+id/right_rotate2" />
+
+    <Button
+        android:id="@+id/right_rotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/left_rotate2"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:text="右臂旋转1" />
+    <Button
+        android:id="@+id/right_rotate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/right_rotate"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:text="右臂旋转180" />
+
+
+    <Button
+        android:id="@+id/nod_rotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:text="点头旋转+10" />
+
+    <Button
+        android:id="@+id/nod_rotate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/nod_rotate"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:text="点头旋转0" />
+
+    <Button
+        android:id="@+id/nod_rotate3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/nod_rotate2"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:text="点头旋转-10" />
+
+    <Button
+        android:id="@+id/shake_rotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nod_rotate3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:text="摇头旋转+90" />
+
+    <Button
+        android:id="@+id/shake_rotate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shake_rotate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:text="摇头旋转0" />
+
+    <Button
+        android:id="@+id/shake_rotate3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shake_rotate2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        android:text="摇头旋转-90" />
+
+    <Button
+        android:id="@+id/fix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/nod_rotate"
+        android:layout_marginEnd="19dp"
+        android:layout_marginRight="19dp"
+        android:onClick="onClick"
+        android:text="缩" />
+
+    <Button
+        android:id="@+id/power_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fix"
+        android:layout_alignStart="@+id/fix"
+        android:layout_alignTop="@+id/nod_rotate2"
+        android:layout_marginTop="10dp"
+        android:onClick="onClick"
+        android:text="伸开" />
+
+</RelativeLayout>
